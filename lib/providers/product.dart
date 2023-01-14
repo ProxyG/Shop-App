@@ -23,7 +23,7 @@ class Product with ChangeNotifier {
 
   Future<void> toggleFavoriteStatus(String token, String userId) async {
     final url = Uri.parse(
-        'https://shop-app-2f246-default-rtdb.europe-west1.firebasedatabase.app/userFavorites/$userId/$id.json?auth=$token');
+        'Firebase URL/userFavorites/$userId/$id.json?auth=$token');
     isFavorite = !isFavorite;
     notifyListeners();
     try {

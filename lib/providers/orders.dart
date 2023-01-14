@@ -44,7 +44,7 @@ class Orders with ChangeNotifier {
 
   Future<void> fetchAndSetOrders() async {
     final url = Uri.parse(
-        'https://shop-app-2f246-default-rtdb.europe-west1.firebasedatabase.app/orders.json?auth=$authToken&orderBy="ordererId"&equalTo="$userId"');
+        'Firebase URL/orders.json?auth=$authToken&orderBy="ordererId"&equalTo="$userId"');
     try {
       final response = await http.get(url);
       final extractedOrders =
@@ -69,7 +69,7 @@ class Orders with ChangeNotifier {
 
   Future<void> addOrder(List<CartItem> cartProducts, double total) async {
     final url = Uri.parse(
-        'https://shop-app-2f246-default-rtdb.europe-west1.firebasedatabase.app/orders.json?auth=$authToken');
+        'Firebase URL/orders.json?auth=$authToken');
     List<Map<String, Object>> items = cartProducts
         .map((cartItem) => {
               'id': cartItem.id,
